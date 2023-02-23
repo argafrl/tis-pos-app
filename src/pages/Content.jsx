@@ -1,6 +1,6 @@
-import { Hand, ThumbsUp } from "akar-icons";
+import { Hand } from "akar-icons";
 import { useState } from "react";
-import { Route, Router, Routes, useRoutes } from "react-router-dom";
+import { useRoutes } from "react-router-dom";
 import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
 import Sidebar from "../components/Sidebar";

@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 import data from "../utils/database.json"
 
 const Cart = () => {
-  const [savedUser, setSavedUser] = useState('');
   const [indexUser, setIndexUser] = useState(0);
   const [items, setItems] = useState('')
 
@@ -73,7 +72,7 @@ const Cart = () => {
             <div className="flex justify-between">
               <p className="text-lg font-bold">Total</p>
               <div className="">
-                <p className="mb-1 text-lg font-bold">Rp 134.98 USD</p>
+                <p className="mb-1 text-lg font-bold">Rp 134.98</p>
                 <p className="text-sm text-gray-700">including PPN</p>
               </div>
             </div>

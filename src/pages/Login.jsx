@@ -1,6 +1,5 @@
-import "../styles/login.scss"
 import ShoppingBag from "../assets/images/shopping-bag.svg"
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import data from "../utils/database.json"
 import { useState } from "react";
 import { useAuth } from "../utils/auth";

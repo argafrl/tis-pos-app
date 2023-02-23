@@ -1,12 +1,10 @@
 import { DoubleCheck } from "akar-icons";
 import { useEffect, useState } from "react";
-import Navbar from "../components/Navbar";
 import data from "../utils/database.json";
 
 const Home = () => {
   const [savedUser, setSavedUser] = useState('');
   const [indexUser, setIndexUser] = useState(0);
-  const [price, setPrice] = useState('')
 
   const getUserInfo = async () => {
     try {
