@@ -17,7 +17,8 @@ const Login = () => {
       setAuthTokens(user);
       setLoggedIn(true);
     } else {
-      console.log("User tidak ditemukan");
+      setUser('');
+      alert("User tidak ditemukan, Hint: Coba Input ani, charlie, budi, dipta ")
     }
   }
 
@@ -44,14 +45,14 @@ const Login = () => {
                   </div>
                   <div className="space-y-5">
                     <div className="space-y-2">
-                      <label className="text-sm font-medium text-gray-700 tracking-wide">Email</label>
-                      <input className=" w-full text-base px-4 py-2 border  border-gray-300 rounded-lg focus:outline-none focus:border-blue-500" type="" placeholder="Enter your email" onChange={(e) => setUser(e.target.value)} />
+                      <label className="text-sm font-medium text-gray-700 tracking-wide">Username</label>
+                      <input className=" w-full text-base px-4 py-2 border  border-gray-300 rounded-lg focus:outline-none focus:border-blue-500" type="text" placeholder="Enter your username" value={user} onChange={(e) => setUser(e.target.value)} />
                     </div>
                     <div className="space-y-2">
                       <label className="mb-5 text-sm font-medium text-gray-700 tracking-wide">
                         Password
                       </label>
-                      <input className="w-full content-center text-base px-4 py-2 border  border-gray-300 rounded-lg focus:outline-none focus:border-blue-500" type="" placeholder="Enter your password" />
+                      <input className="w-full content-center text-base px-4 py-2 border  border-gray-300 rounded-lg focus:outline-none focus:border-blue-500" type="text" placeholder="Enter your password" />
                     </div>
                     <div className="flex items-center justify-between">
                       <div className="flex items-center">
