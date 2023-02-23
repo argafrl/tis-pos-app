@@ -1,0 +1,119 @@
+{
+  "Items": [{
+    "name": "Oval Hat",
+    "type": "Hats",
+    "img": "ovalhat.jpg",
+    "prices": [{
+        "priceFor": "Regular",
+        "price": 20000
+      },
+      {
+        "priceFor": "VIP",
+        "price": 15000
+      }
+    ]
+  }, {
+    "name": "Square Hat",
+    "type": "Hats",
+    "img": "squarehat.webp",
+    "prices": [{
+        "priceFor": "Regular",
+        "price": 30000
+      },
+      {
+        "priceFor": "VIP",
+        "price": 20000
+      },
+      {
+        "priceFor": "Wholesale",
+        "price": 15000
+      }
+    ]
+  }, {
+    "name": "Magic Shirt",
+    "type": "Tops",
+    "img": "magicshirt.webp",
+    "prices": [{
+      "priceFor": "Regular",
+      "price": 50000
+    }]
+  }, {
+    "name": "Basic Shorts",
+    "type": "Shorts",
+    "img": "basicshort.jpg",
+    "prices": [{
+      "priceFor": "Regular",
+      "price": 40000
+    }]
+  }],
+  "Buyers": [{
+    "name": "Ani",
+    "type": "Regular"
+  }, {
+    "name": "Budi",
+    "type": "VIP"
+  }, {
+    "name": "Charlie",
+    "type": "Regular"
+  }, {
+    "name": "Dipta",
+    "type": "Wholesale"
+  }],
+  "Transaction": [{
+    "item": "Magic Shirt",
+    "qty": 1,
+    "buyer": "Ani"
+  }, {
+    "item": "Square Hat",
+    "qty": 2,
+    "buyer": "Budi"
+  }, {
+    "item": "Magic Shirt",
+    "qty": 1,
+    "buyer": "Ani"
+  }, {
+    "item": "Oval Hat",
+    "qty": 1,
+    "buyer": "Ani"
+  }, {
+    "item": "Square Hat",
+    "qty": 100,
+    "buyer": "Dipta"
+  }],
+  "Summary": {
+    "totalTransaction": 5,
+    "bestSellingItem": "Square Hat",
+    "bestSellingCategory": "Hats",
+    "rpc": [{
+        "category": "Hats",
+        "revenue": 1560000
+      },
+      {
+        "category": "Tops",
+        "revenue": 100000
+      },
+      {
+        "category": "Shorts",
+        "revenue": 0
+      }
+    ],
+    "revenue": 1660000,
+    "bestSpenders": [{
+        "name": "Dipta",
+        "type": "Wholesale",
+        "spent": 1500000
+      },
+      {
+        "name": "Ani",
+        "type": "Regular",
+        "spent": 120000
+      },
+      {
+        "name": "Budi",
+        "type": "VIP",
+        "spent": 40000
+      }
+    ]
+  }
+
+}
