@@ -1,8 +1,11 @@
 import { Cart, HomeAlt1, PeopleGroup, SignOut } from "akar-icons";
+import { useContext } from "react";
 import { Link, NavLink, useLocation } from "react-router-dom";
+import { CartContext } from "../utils/CartContext";
 
 const Sidebar = ({ location, setLocation }) => {
   const locationPath = useLocation()
+  const { items, sumItemsPrice } = useContext(CartContext);
 
   return (
     <div

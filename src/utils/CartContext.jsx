@@ -24,6 +24,10 @@ const CartStore = ({ children }) => {
     setSumItemsPrice(total);
   };
 
+  function clearCart() {
+    setItems([]);
+  }
+
   useEffect(() => {
     setItemsPrice();
   }, [items]);
@@ -36,6 +40,7 @@ const CartStore = ({ children }) => {
         addItem,
         sumItemsPrice,
         removeItem,
+        clearCart,
       }}
     >
       {children}

@@ -3,7 +3,7 @@ import { CartContext } from "../utils/CartContext";
 import data from "../utils/database.json";
 
 const Cart = () => {
-  const { items, sumItemsPrice, removeItem } = useContext(CartContext);
+  const { items, sumItemsPrice, removeItem, clearCart } = useContext(CartContext);
 
   return (
     <div className="">
@@ -100,6 +100,7 @@ const Cart = () => {
                 <label
                   htmlFor="my-modal-3"
                   className="btn btn-sm btn-circle absolute right-2 top-2"
+                  onClick={clearCart}
                 >
                   ✕
                 </label>
