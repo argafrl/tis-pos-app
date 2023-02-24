@@ -7,7 +7,17 @@ const CartStore = ({ children }) => {
   const [sumItemsPrice, setSumItemsPrice] = useState("");
 
   const addItem = (item) => {
-    setItems([...items, item]);
+    // setItems([...items, item]);
+
+    const existingItemIndex = items.findIndex((i) => i.item === item.item);
+
+    if (existingItemIndex !== -1) {
+      const updatedIems = [...items];
+      updatedIems[existingItemIndex].qty += item.qty;
+      setItems(updatedIems);
+    } else {
+      setItems([...items, item]);
+    }
   };
 
   const removeItem = (index) => {
@@ -18,7 +28,7 @@ const CartStore = ({ children }) => {
 
   const setItemsPrice = () => {
     const total = items.reduce(
-      (accumulator, item) => accumulator + item.price,
+      (accumulator, item) => accumulator + (item.qty * item.price),
       0
     );
     setSumItemsPrice(total);

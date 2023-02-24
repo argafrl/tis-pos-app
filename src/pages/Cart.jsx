@@ -1,9 +1,10 @@
-import { useContext, useEffect, useState } from "react";
+import { useContext } from "react";
 import { CartContext } from "../utils/CartContext";
-import data from "../utils/database.json";
+import data from "../data/database.json";
 
 const Cart = () => {
-  const { items, sumItemsPrice, removeItem, clearCart } = useContext(CartContext);
+  const { items, sumItemsPrice, removeItem, clearCart } =
+    useContext(CartContext);
 
   return (
     <div className="">
@@ -11,13 +12,12 @@ const Cart = () => {
         <h1 className="py-4 text-center md:text-left font-bold">Cart Items</h1>
         <div className="mx-auto max-w-5xl justify-center px-6 md:flex md:space-x-6 xl:px-0">
           <div className="rounded-lg md:w-2/3">
-            {/* {indexUser &&
-              data.Transaction.filter(function (e) {
-                return e.buyer.toLowerCase().indexOf(userName) !== -1;
-              }).map((e) => { */}
             {items.map((e, idx) => {
               return (
-                <div className="justify-between mb-6 rounded-2xl bg-white p-6 border shadow-sm sm:flex sm:justify-start">
+                <div
+                  key={idx}
+                  className="justify-between mb-6 rounded-2xl bg-white p-6 border shadow-sm sm:flex sm:justify-start"
+                >
                   <img
                     src={
                       "/images/" +
@@ -50,14 +50,14 @@ const Cart = () => {
                           xmlns="http://www.w3.org/2000/svg"
                           fill="none"
                           viewBox="0 0 24 24"
-                          stroke-width="1.5"
+                          strokeWidth="1.5"
                           stroke="currentColor"
                           className="h-5 w-5 cursor-pointer duration-150 hover:text-red-500"
                           onClick={() => removeItem(idx)}
                         >
                           <path
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
                             d="M6 18L18 6M6 6l12 12"
                           />
                         </svg>
@@ -69,7 +69,7 @@ const Cart = () => {
             })}
           </div>
 
-          <div className="mt-6 h-full rounded-2xl border bg-white p-6 shadow-sm md:mt-0 md:w-1/3">
+          <form className="mt-6 h-full rounded-2xl border bg-white p-6 shadow-sm md:mt-0 md:w-1/3">
             <div className="mb-2 flex justify-between">
               <p className="text-gray-700">Subtotal</p>
               <p className="text-gray-700">Rp {sumItemsPrice}</p>
@@ -108,7 +108,7 @@ const Cart = () => {
                 <p className="py-4">Your Item has been checkout successfully</p>
               </div>
             </div>
-          </div>
+          </form>
         </div>
       </div>
     </div>

@@ -1,30 +1,13 @@
 import { DoubleCheck } from "akar-icons";
 import { useContext, useEffect, useState } from "react";
 import { CartContext } from "../utils/CartContext";
-import data from "../utils/database.json";
+import data from "../data/database.json";
+import { UserContext } from "../utils/UserContext";
 
 const Home = () => {
-  const [savedUser, setSavedUser] = useState("");
-  const [indexUser, setIndexUser] = useState(0);
 
   const { items, setItems, addItem } = useContext(CartContext);
-
-  const getUserInfo = async () => {
-    try {
-      const item = JSON.parse(localStorage.getItem("tokens"));
-      setSavedUser(item);
-    } catch {
-      console.log("err");
-    } finally {
-      if (savedUser) {
-        const index = data.Buyers.findIndex(
-          (item) => savedUser.toLowerCase() === item.name.toLowerCase()
-        );
-        setIndexUser(index);
-        console.log(indexUser);
-      }
-    }
-  };
+  const { userName, indexUser, getUserInfo,} = useContext(UserContext);
 
   useEffect(() => {
     getUserInfo();
@@ -151,7 +134,7 @@ const Home = () => {
           {/* <Home /> */}
           <section>
             <div className="grid max-w-6xl grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
-              {savedUser &&
+              { userName &&
                 data.Items.map((e, idx) => {
                   return (
                     <article
@@ -178,7 +161,19 @@ const Home = () => {
                                 : e.prices[0].price}
                             </p>
 
-                            <div className="flex items-center space-x-1.5 rounded-lg bg-primary px-4 py-1.5 text-white duration-100 hover:bg-primary-focus">
+                            <button
+                              onClick={() =>
+                                addItem({
+                                  item: e.name,
+                                  qty: 1,
+                                  buyer: indexUser,
+                                  price: e.prices[indexUser]
+                                    ? e.prices[indexUser].price
+                                    : e.prices[0].price,
+                                })
+                              }
+                              className="flex items-center space-x-1.5 rounded-lg bg-primary px-4 py-1.5 text-white duration-100 hover:bg-primary-focus"
+                            >
                               <svg
                                 xmlns="http://www.w3.org/2000/svg"
                                 fill="none"
@@ -193,22 +188,8 @@ const Home = () => {
                                   d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 00-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 00-16.536-1.84M7.5 14.25L5.106 5.272M6 20.25a.75.75 0 11-1.5 0 .75.75 0 011.5 0zm12.75 0a.75.75 0 11-1.5 0 .75.75 0 011.5 0z"
                                 />
                               </svg>
-                              <button
-                                className="text-sm"
-                                onClick={() =>
-                                  addItem({
-                                    item: e.name,
-                                    qty: "1",
-                                    buyer: savedUser,
-                                    price: e.prices[indexUser]
-                                      ? e.prices[indexUser].price
-                                      : e.prices[0].price,
-                                  })
-                                }
-                              >
-                                Add to cart
-                              </button>
-                            </div>
+                              <div className="text-sm">Add to cart</div>
+                            </button>
                           </div>
                         </div>
                       </a>

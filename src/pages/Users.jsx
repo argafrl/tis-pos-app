@@ -1,4 +1,4 @@
-import data from "../utils/database.json";
+import data from "../data/database.json";
 
 const Users = () => {
   return (

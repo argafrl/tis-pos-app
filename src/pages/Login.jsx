@@ -1,6 +1,6 @@
 import ShoppingBag from "../assets/images/shopping-bag.svg";
 import { useNavigate } from "react-router-dom";
-import data from "../utils/database.json";
+import data from "../data/database.json";
 import { useState } from "react";
 import { useAuth } from "../utils/auth";
 
