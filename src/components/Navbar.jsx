@@ -44,7 +44,7 @@ const Navbar = () => {
               <span className="font-bold text-lg text-black">{items.length} Items</span>
               <span className="text-black mb-2">Subtotal: {sumItemsPrice}</span>
               <div className="card-actions">
-                <Link to="content/cart">
+                <Link to="cart">
                   <button className="btn btn-primary btn-block">
                     View cart
                   </button>

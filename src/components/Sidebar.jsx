@@ -1,7 +1,9 @@
 import { Cart, HomeAlt1, PeopleGroup, SignOut } from "akar-icons";
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useLocation } from "react-router-dom";
 
 const Sidebar = ({ location, setLocation }) => {
+  const locationPath = useLocation()
+
   return (
     <div
       id="menu"
@@ -11,7 +13,7 @@ const Sidebar = ({ location, setLocation }) => {
         <NavLink to="home" onClick={() => setLocation("home")}>
           <div
             className={`${
-              location == "home"
+              locationPath.pathname == "/content/home"
                 ? `bg-primary hover:bg-primary-focus shadow-md`
                 : ""
             } transition rounded-lg duration-150 ease-linear py-3 px-2 group`}
@@ -22,25 +24,25 @@ const Sidebar = ({ location, setLocation }) => {
                   strokeWidth={2}
                   size={36}
                   className={`${
-                    location == "home" ? `text-white` : "text-primary"
+                    locationPath.pathname == "/content/home" ? `text-white` : "text-primary"
                   }`}
                 />
               </div>
               <div
                 className={`${
-                  location == "home" ? `text-white` : "text-black"
+                  locationPath.pathname == "/content/home" ? `text-white` : "text-black"
                 }`}
               >
                 <p
                   className={`${
-                    location == "home" ? `text-white` : "text-primary"
+                    locationPath.pathname == "/content/home" ? `text-white` : "text-primary"
                   } font-bold text-base lg:text-lg leading-4`}
                 >
                   Home
                 </p>
                 <p
                   className={`${
-                    location == "home" ? `text-white` : "text-black"
+                    locationPath.pathname == "/content/home" ? `text-white` : "text-black"
                   } text-sm hidden md:block`}
                 >
                   Stats overview
@@ -52,7 +54,7 @@ const Sidebar = ({ location, setLocation }) => {
         <NavLink to="cart" onClick={() => setLocation("cart")}>
           <div
             className={`${
-              location == "cart"
+              locationPath.pathname == "/content/cart"
                 ? `bg-primary hover:bg-primary-focus shadow-md`
                 : ""
             } transition rounded-lg duration-150 ease-linear py-3 px-2 group`}
@@ -63,25 +65,25 @@ const Sidebar = ({ location, setLocation }) => {
                   strokeWidth={2}
                   size={36}
                   className={`${
-                    location == "cart" ? `text-white` : "text-primary"
+                    locationPath.pathname == "/content/cart" ? `text-white` : "text-primary"
                   }`}
                 />
               </div>
               <div
                 className={`${
-                  location == "cart" ? `text-white` : "text-black"
+                  locationPath.pathname == "/content/cart" ? `text-white` : "text-black"
                 }`}
               >
                 <p
                   className={`${
-                    location == "cart" ? `text-white` : "text-primary"
+                    locationPath.pathname == "/content/cart" ? `text-white` : "text-primary"
                   } font-bold text-base lg:text-lg leading-4`}
                 >
                   Cart
                 </p>
                 <p
                   className={`${
-                    location == "cart" ? `text-white` : "text-black"
+                    locationPath.pathname == "/content/cart" ? `text-white` : "text-black"
                   } text-sm hidden md:block`}
                 >
                   Checkout items
@@ -94,7 +96,7 @@ const Sidebar = ({ location, setLocation }) => {
         <NavLink to="users" onClick={() => setLocation("users")}>
           <div
             className={`${
-              location == "users"
+              locationPath.pathname == "/content/users"
                 ? `bg-primary hover:bg-primary-focus shadow-md`
                 : ""
             } transition rounded-lg duration-150 ease-linear py-3 px-2 group`}
@@ -105,25 +107,25 @@ const Sidebar = ({ location, setLocation }) => {
                   strokeWidth={2}
                   size={36}
                   className={`${
-                    location == "users" ? `text-white` : "text-primary"
+                    locationPath.pathname == "/content/users" ? `text-white` : "text-primary"
                   }`}
                 />
               </div>
               <div
                 className={`${
-                  location == "users" ? `text-white` : "text-black"
+                  locationPath.pathname == "/content/users" ? `text-white` : "text-black"
                 }`}
               >
                 <p
                   className={`${
-                    location == "users" ? `text-white` : "text-primary"
+                    locationPath.pathname == "/content/users" ? `text-white` : "text-primary"
                   } font-bold text-base lg:text-lg leading-4`}
                 >
                   Users
                 </p>
                 <p
                   className={`${
-                    location == "users" ? `text-white` : "text-black"
+                    locationPath.pathname == "/content/users" ? `text-white` : "text-black"
                   } text-sm hidden md:block`}
                 >
                   Manage users
@@ -135,7 +137,7 @@ const Sidebar = ({ location, setLocation }) => {
         <Link to="/" onClick={() => setLocation("logout")}>
           <div
             className={`${
-              location == "logout"
+              locationPath.pathname == "/content/logout"
                 ? `bg-primary hover:bg-primary-focus shadow-md`
                 : ""
             } transition rounded-lg duration-150 ease-linear py-3 px-2 group`}
@@ -146,25 +148,25 @@ const Sidebar = ({ location, setLocation }) => {
                   strokeWidth={2}
                   size={36}
                   className={`${
-                    location == "logout" ? `text-white` : "text-primary"
+                    locationPath.pathname == "/content/logout" ? `text-white` : "text-primary"
                   }`}
                 />
               </div>
               <div
                 className={`${
-                  location == "logout" ? `text-white` : "text-black"
+                  locationPath.pathname == "/content/logout" ? `text-white` : "text-black"
                 }`}
               >
                 <p
                   className={`${
-                    location == "logout" ? `text-white` : "text-primary"
+                    locationPath.pathname == "/content/logout" ? `text-white` : "text-primary"
                   } font-bold text-base lg:text-lg leading-4`}
                 >
                   Logout
                 </p>
                 <p
                   className={`${
-                    location == "logout" ? `text-white` : "text-black"
+                    locationPath.pathname == "/content/logout" ? `text-white` : "text-black"
                   } text-sm hidden md:block`}
                 >
                   Exit app

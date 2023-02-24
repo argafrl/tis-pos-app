@@ -7,6 +7,7 @@ import Sidebar from "../components/Sidebar";
 import { CartStore } from "../utils/CartContext";
 import Cart from "./Cart";
 import Home from "./Home";
+import Users from "./Users";
 
 const Content = () => {
   const [location, setLocation] = useState("home");
@@ -14,6 +15,7 @@ const Content = () => {
   let element = useRoutes([
     { path: "home", element: <Home /> },
     { path: "cart", element: <Cart /> },
+    { path: "users", element: <Users /> },
   ]);
 
   return (

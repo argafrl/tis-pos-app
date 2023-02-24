@@ -5,31 +5,6 @@ import data from "../utils/database.json";
 const Cart = () => {
   const { items, sumItemsPrice, removeItem } = useContext(CartContext);
 
-  // const [indexUser, setIndexUser] = useState(0);
-  // const [userName, setUserName] = useState("");
-
-  // const getAllCart = () => {
-  //   try {
-  //     const item = JSON.parse(localStorage.getItem("tokens"));
-  //     setUserName(item);
-  //     data.Transaction.filter(function (e) {
-  //       return e.buyer.toLowerCase().indexOf(item) !== -1;
-  //     });
-  //     const index = data.Buyers.findIndex(
-  //       (item) => userName.toLowerCase() === item.name.toLowerCase()
-  //     );
-  //     setIndexUser(index);
-  //     console.log(indexUser);
-  //   } catch {
-  //     console.log("err");
-  //   } finally {
-  //   }
-  // };
-
-  // useEffect(() => {
-  //   getAllCart();
-  // }, []);
-
   return (
     <div className="">
       <div className="text-black">
@@ -113,9 +88,25 @@ const Cart = () => {
                 <p className="text-sm text-gray-700">including PPN</p>
               </div>
             </div>
-            <button className="mt-6 w-full rounded-md bg-primary py-1.5 font-medium text-blue-50 hover:bg-primary-focus transition duration-500">
+            <label
+              htmlFor="my-modal-3"
+              className="btn mt-6 w-full rounded-md bg-primary py-1.5 font-medium text-blue-50 hover:bg-primary-focus transition duration-500"
+            >
               Check out
-            </button>
+            </label>
+            <input type="checkbox" id="my-modal-3" className="modal-toggle" />
+            <div className="modal">
+              <div className="modal-box relative">
+                <label
+                  htmlFor="my-modal-3"
+                  className="btn btn-sm btn-circle absolute right-2 top-2"
+                >
+                  ✕
+                </label>
+                <h3 className="text-lg font-bold">Congratulations!</h3>
+                <p className="py-4">Your Item has been checkout successfully</p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
