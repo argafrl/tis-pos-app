@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { Route, Routes } from 'react-router-dom'
+import Footer from './components/Footer'
 import Cart from './pages/Cart'
 import Content from './pages/Content'
 import Home from './pages/Home'
@@ -24,6 +25,7 @@ function App() {
             <Route path="/" element={<Login />} />
             <Route path="content/*" element={<Content />} />
           </Routes>
+          <Footer />
         </UserStore>
       </AuthContext.Provider>
     </div>

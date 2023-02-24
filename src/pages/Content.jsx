@@ -51,7 +51,6 @@ const Content = () => {
               </div>
             </div>
           </div>
-          <Footer />
         </CartStore>
     </div>
   );
