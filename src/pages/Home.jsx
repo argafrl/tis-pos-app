@@ -7,7 +7,7 @@ import { UserContext } from "../utils/UserContext";
 const Home = () => {
 
   const { items, setItems, addItem } = useContext(CartContext);
-  const { userName, indexUser, getUserInfo,} = useContext(UserContext);
+  const { userName, indexUser, getUserInfo } = useContext(UserContext);
 
   useEffect(() => {
     getUserInfo();

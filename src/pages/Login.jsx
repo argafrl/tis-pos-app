@@ -89,7 +89,7 @@ const Login = () => {
                       className="h-4 w-4 bg-blue-500 focus:ring-blue-400 border-gray-300 rounded"
                     />
                     <label
-                      for="remember_me"
+                      htmlFor="remember_me"
                       className="ml-2 block text-sm text-gray-800"
                     >
                       Remember me

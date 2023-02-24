@@ -5,6 +5,7 @@ import Content from './pages/Content'
 import Home from './pages/Home'
 import Login from './pages/Login'
 import { AuthContext } from './utils/auth'
+import { UserStore } from './utils/UserContext'
 
 function App() {
 
@@ -18,10 +19,12 @@ function App() {
   return (
     <div className="App">
       <AuthContext.Provider value={{authTokens, setAuthTokens: setTokens}}>
-        <Routes>
-          <Route path="/" element={<Login />} />
-          <Route path="content/*" element={<Content />} />
-        </Routes>
+        <UserStore>
+          <Routes>
+            <Route path="/" element={<Login />} />
+            <Route path="content/*" element={<Content />} />
+          </Routes>
+        </UserStore>
       </AuthContext.Provider>
     </div>
   )

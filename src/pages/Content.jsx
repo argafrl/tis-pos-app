@@ -1,17 +1,23 @@
 import { Hand } from "akar-icons";
-import { useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { useRoutes } from "react-router-dom";
 import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
 import Sidebar from "../components/Sidebar";
 import { CartStore } from "../utils/CartContext";
-import { UserStore } from "../utils/UserContext";
+import { UserContext } from "../utils/UserContext";
 import Cart from "./Cart";
 import Home from "./Home";
 import Users from "./Users";
 
 const Content = () => {
   const [location, setLocation] = useState("home");
+
+  const { userName, indexUser, getUserInfo, } = useContext(UserContext);
+
+  useEffect(() => {
+    getUserInfo();
+  }, []);
 
   let element = useRoutes([
     { path: "home", element: <Home /> },
@@ -21,7 +27,6 @@ const Content = () => {
 
   return (
     <div>
-      <UserStore>
         <CartStore>
           <Navbar />
           <div className="antialiased w-full min-h-screen relative py-4">
@@ -48,7 +53,6 @@ const Content = () => {
           </div>
           <Footer />
         </CartStore>
-      </UserStore>
     </div>
   );
 };

@@ -1,9 +1,11 @@
 import { useContext } from "react";
 import { Link } from "react-router-dom";
 import { CartContext } from "../utils/CartContext";
+import { UserContext } from "../utils/UserContext";
 
 const Navbar = () => {
   const { items, sumItemsPrice } = useContext(CartContext);
+  const { userName, indexUser, getUserInfo,} = useContext(UserContext);
 
   return (
     <div className="navbar bg-primary text-white">
@@ -59,7 +61,7 @@ const Navbar = () => {
             className="btn btn-ghost btn-circle avatar placeholder"
           >
             <div className="bg-neutral-focus text-neutral-content rounded-full w-10">
-              <span className="text-xl">K</span>
+              <span className="text-xl">{userName.charAt(0)}</span>
             </div>
           </label>
           <ul
